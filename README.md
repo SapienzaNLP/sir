@@ -2,7 +2,7 @@
 
 # IR like a SIR:<u>S</u>ense-enhanced <u>I</u>nformation <u>R</u>etrieval for Multiple Languages
 
-[![Paper](https://img.shields.io/badge/paper-EMNLP--Proceedings-brightgreen)](https://www.researchgate.net/publication/355808157_IR_like_a_SIR_Sense-enhanced_Information_Retrieval_for_Multiple_Languages)
+[![Paper](https://img.shields.io/badge/paper-EMNLP--Proceedings-brightgreen)](https://aclanthology.org/2021.emnlp-main.79/)
 [![Conference](https://img.shields.io/badge/emnlp-EMNLP--2021-blue)](https://2021.emnlp.org/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
