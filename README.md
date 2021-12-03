@@ -10,6 +10,7 @@
 
 SIR (Sense-enhanced Information Retrieval) brings Word Sense Disambiguation (WSD) and Information Retrieval closer and provides additional semantic information for the query via sense definitions. This semantic information leads to improvements over a baseline that does not access semantics in multiple languages.
 
+![SIR Image](img/sir.png)
 
 If you find our paper, code or framework useful, please reference this work in your paper:
 
@@ -21,12 +22,158 @@ If you find our paper, code or framework useful, please reference this work in y
   publisher = {Association for Computational Linguistics},
   year      = {2021},
 }
-
 ```
 
-## Code Release 
-* The code for running the experiments of SIR will be released soon!
+## 1. Setup 
 
+I. Create a conda environment with **Python 3.6** and **PyTorch 1.7.1** and install the dependencies [requirements.txt](requirements.txt).
+
+Via conda:
+
+    conda create -n sir python=3.6
+    conda activate sir
+    pip install -r requirements.txt
+
+To enable wandb logging: 
+
+    wandb login
+
+II. Download all the artifacts:
+
+Download ARES embeddings indeces and replace the empty `ares` directory inside `data/`
+
+**Anonymized Link:** [ARES Indeces](https://osf.io/am37y/?view_only=86f58551cb0a4413b11a512775c91cb2)
+
+Download pretrained checkpoints and place them inside `out/`
+
+**Anonymized Link:** [Checkpoints](https://osf.io/3qwxj/?view_only=b3af0286d2044147aa3d8854cc27909f)
+
+Via conda:
+
+
+## 2. SIR Training & Evaluation
+
+### I. English monolingual retrieval in TREC Robust04* data:
+    
+Train on Robust04 folds:
+
+    bash scripts/run_robust_sense_aware.sh 
+
+Evaluate on Robust04 folds:
+    
+    bash scripts/rerank_robust_sense_aware.sh 
+
+    
+*These scripts contain the paths to fold1 of the Robust04 data. To run for other folds as well, please replace **f1** in _train_pairs_, _valid_run_ and _model_out_dir_ paths with the corresponding fold. Choices --> {f1, f2, f3, f4, f5}
+
+### II. Non-English monolingual retrieval in CLEF 2000-2003* data:
+
+Train in Robust04 merged folds: 
+
+    bash scripts/run_robust_sense_aware_mult.sh
+
+Evaluate in CLEF: 
+
+    bash scripts/rerank_robust_sense_aware_mult.sh
+
+## 3. VanillaBERT Training & Evaluation
+
+### I. English monolingual retrieval in TREC Robust04* data:
+    
+Train on Robust04 folds:
+
+    bash scripts/run_robust.sh 
+
+Evaluate on Robust04 folds:
+    
+    bash scripts/rerank_robust.sh 
+
+    
+*These scripts contain the paths to fold1 of the Robust04 data. To run for other folds as well, please replace **f1** in _train_pairs_, _valid_run_ and _model_out_dir_ paths with the corresponding fold. Choices --> {f1, f2, f3, f4, f5}
+
+### II. Non-English monolingual retrieval in CLEF 2000-2003* data:
+
+Train in Robust04 merged folds: 
+
+    bash scripts/run_robust_mult.sh
+
+Evaluate in CLEF: 
+
+    bash scripts/rerank_robust_mult.sh
+
+*Due to proprietary nature of CLEF data, we do not provide the data for testing the models in this setting. We provide all the preprocessing steps starting from the original corpora in ``src/dataset_creation``.
+
+    conda create -n sir python=3.6
+    conda activate sir
+    pip install -r requirements.txt
+
+To enable wandb logging: 
+
+    wandb login
+
+II. Download all the artifacts:
+
+Download ARES embeddings indeces and replace the empty `ares` directory inside `data/`
+
+**Anonymized Link:** [ARES Indeces](https://osf.io/am37y/?view_only=86f58551cb0a4413b11a512775c91cb2)
+
+Download pretrained checkpoints and place them inside `out/`
+
+**Anonymized Link:** [Checkpoints](https://osf.io/3qwxj/?view_only=b3af0286d2044147aa3d8854cc27909f)
+
+
+
+## 2. SIR Training & Evaluation
+
+### I. English monolingual retrieval in TREC Robust04* data:
+    
+Train on Robust04 folds:
+
+    bash scripts/run_robust_sense_aware.sh 
+
+Evaluate on Robust04 folds:
+    
+    bash scripts/rerank_robust_sense_aware.sh 
+
+    
+*These scripts contain the paths to fold1 of the Robust04 data. To run for other folds as well, please replace **f1** in _train_pairs_, _valid_run_ and _model_out_dir_ paths with the corresponding fold. Choices --> {f1, f2, f3, f4, f5}
+
+### II. Non-English monolingual retrieval in CLEF 2000-2003* data:
+
+Train in Robust04 merged folds: 
+
+    bash scripts/run_robust_sense_aware_mult.sh
+
+Evaluate in CLEF: 
+
+    bash scripts/rerank_robust_sense_aware_mult.sh
+
+## 3. VanillaBERT Training & Evaluation
+
+### I. English monolingual retrieval in TREC Robust04* data:
+    
+Train on Robust04 folds:
+
+    bash scripts/run_robust.sh 
+
+Evaluate on Robust04 folds:
+    
+    bash scripts/rerank_robust.sh 
+
+    
+*These scripts contain the paths to fold1 of the Robust04 data. To run for other folds as well, please replace **f1** in _train_pairs_, _valid_run_ and _model_out_dir_ paths with the corresponding fold. Choices --> {f1, f2, f3, f4, f5}
+
+### II. Non-English monolingual retrieval in CLEF 2000-2003* data:
+
+Train in Robust04 merged folds: 
+
+    bash scripts/run_robust_mult.sh
+
+Evaluate in CLEF: 
+
+    bash scripts/rerank_robust_mult.sh
+
+*Due to proprietary nature of CLEF data, we do not provide the data for testing the models in this setting. We provide all the preprocessing steps starting from the original corpora in ``src/dataset_creation``.
 
 ## License
 This project is released under the CC-BY-NC-SA 4.0 license (see `LICENSE`). If you use `SIR`, please put a link to this repo.
@@ -40,3 +187,5 @@ The authors gratefully acknowledge the support of the [ERC Consolidator Grant MO
 
 We adopted modules or code snippets from the open-source projects:
 * [CEDR](https://github.com/Georgetown-IR-Lab/cedr) 
+
+

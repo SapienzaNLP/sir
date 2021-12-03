@@ -1,0 +1,14 @@
+python -m src.rerank \
+--model sense_vanilla_bert \
+--bert bert-base-uncased \
+--datafiles data/robust/title-desc_as_queries.tsv data/robust/documents.tsv \
+--topics_only data/robust/queries.tsv \
+--qrels data/robust/qrels \
+--run data/robust/f1.test.run \
+--out_path f1.test.results \
+--device cuda \
+--model_weights out/robust_title-desc_vanillabert_ares-large_SA_f1_sense-aware/best_weights.p \
+--sense_aware \
+--freeze_query_encoder \
+--normalize_query \
+--use_english_only
