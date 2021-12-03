@@ -100,9 +100,7 @@ Evaluate in CLEF:
 
     bash scripts/rerank_robust_mult.sh
 
-
 *Due to proprietary nature of CLEF data, we do not provide the data for testing the models in this setting. We provide all the preprocessing steps starting from the original corpora in ``src/dataset_creation``.
-
 
 ## License
 This project is released under the CC-BY-NC-SA 4.0 license (see `LICENSE`). If you use `SIR`, please put a link to this repo.
@@ -116,3 +114,4 @@ The authors gratefully acknowledge the support of the [ERC Consolidator Grant MO
 
 We adopted modules or code snippets from the open-source projects:
 * [CEDR](https://github.com/Georgetown-IR-Lab/cedr) 
+
