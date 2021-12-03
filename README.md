@@ -14,10 +14,10 @@ SIR (Sense-enhanced Information Retrieval) brings Word Sense Disambiguation (WSD
 If you find our paper, code or framework useful, please reference this work in your paper:
 
 ```
-@inproceedings{blloshmi-etal-2022-ir,
+@inproceedings{blloshmi-etal-2021-ir,
   title     = {IR like a SIR: Sense-enhanced Information Retrieval for Multiple Languages},
   author    = {Blloshmi, Rexhina and Pasini, Tommaso and Campolungo, Niccolò, Banerjee, Somnath and Navigli, Roberto and Pasi, Gabriella},
-  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing {EMNLP-2022}},
+  booktitle = {Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing {EMNLP-2021}},
   publisher = {Association for Computational Linguistics},
   year      = {2021},
 }
